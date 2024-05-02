@@ -22,6 +22,7 @@ def timer(t):
 
 
 def main():
+    global stop
     count = 0
     t = 180
     timer_thread = threading.Thread(target=timer, args=(t,)) #Initialize threading so that timer function 
