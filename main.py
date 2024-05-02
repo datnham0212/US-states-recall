@@ -1,3 +1,5 @@
+import time
+import threading # Import this to enable running 2 or more functions simultaneously (related to multi-threading)
 us_states = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
     "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
@@ -7,15 +9,37 @@ us_states = [
     "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
     "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ]
-count = 0
-print('Name a US state: ')
-while True:
-    n = input()
-    if n not in us_states:
-        print('You lose' + '    Score: ' + str(count))
-        break
-    else:
-        count+=1
-    if count == len(us_states):
-        print('You win!')
-        break
+
+stop = False
+
+def timer(t):
+    while t and not stop:
+        minutes, seconds = divmod(t, 60)
+        display = '{:02d}:{:02d}'.format(minutes, seconds)
+        print(display,end='\r')
+        time.sleep(1)
+        t-=1
+
+
+def main():
+    count = 0
+    t = 180
+    timer_thread = threading.Thread(target=timer, args=(t,)) #Initialize threading so that timer function 
+                                                            # runs simultaneously with main
+    timer_thread.start()
+    print('Name a US state: ')
+    while True:
+        n = input()
+        if n not in us_states:
+            print('You lose' + '    Score: ' + str(count))
+            stop = True
+            break
+        else:
+            count+=1
+        if count == len(us_states):
+            print('You win!')
+            stop = True
+            break
+    
+if __name__ == "__main__":
+    main()
