@@ -16,7 +16,8 @@ def timer(t):
     while t and not stop:
         minutes, seconds = divmod(t, 60)
         display = '{:02d}:{:02d}'.format(minutes, seconds)
-        print(display,end='\r')
+        print('\t\t\t{:>8}'.format(display), end='\r')  # Fixed-width string to ensure display stays still. 
+                                                        #The countdown display occupies 8 characters, padding it with spaces if necessary. 
         time.sleep(1)
         t-=1
 
