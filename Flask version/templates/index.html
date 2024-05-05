@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>US states recall</title>
+</head>
+
+<body>
+    <h1>US states:</h1>
+    <h2>{{states_list}}</h2>
+    {% for i in range(5) %}
+        {% if i % 2 == 0 %}
+            <h2>{{content}}</h2>
+        {% endif %}
+    {% endfor %}
+</body>
+
+</html>
