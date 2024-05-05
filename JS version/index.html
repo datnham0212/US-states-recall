@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>US states recall</title>
+        <style>
+            input[type="text"] {
+                padding: 10px;
+                border: 1px solid #a8a8a8;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Enter all the U.S states that you can remember on top of your head: </h1>
+        <input type="text" id="states" name="states">
+    </body>
+
+    <script>
+    const us_states = [
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+    "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+    "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+    "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+    "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+    "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+    "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+    ];
+
+    var input = document.getElementById('states');
+
+    input.addEventListener("keypress", function(event){
+        if (event.key == "Enter"){
+            event.preventDefault();
+            var state = input.value;
+            if(us_states.includes(state)){
+                alert('Correct!')
+            }
+            else{
+                alert('Wrong!')
+            }
+        }
+    });
+    
+    </script>
+</html>
