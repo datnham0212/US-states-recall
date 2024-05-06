@@ -26,6 +26,7 @@
     "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
     "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
     ];
+    var us_states_length = us_states.length;
 
     var input = document.getElementById('states');
     var count = 0;
@@ -41,13 +42,13 @@
                 node.append(textnode);
                 document.getElementById('result').appendChild(node);
                 us_states.splice(us_states.indexOf(state), 1);
-                count+=1;
-            }
-            else if(count == 50){
-                alert('Congrats, you have listed all of the states!')
+                count++;
+                if(count == us_states_length){
+                alert('Congrats, you have listed all of the states!');
+                }
             }
             else{
-                alert('Try again!')
+                alert('Try again!');
             }
         }
     });
