@@ -9,9 +9,14 @@
 <body>
     <div class = "container">
     <h1>Recall all U.S states </h1>
-        <input type="text" id="states" name="states">
-        <img src="https://www.50states.com/wp-content/uploads/2020/12/US-Blank-map.jpg" alt="usa">
-        <p id="result"></p>
+        <input type="text" id="statesInput" name="states">
+        <button type="submit" id="recall" onclick="recall()">Recall</button>
+        <!-- <img src="https://www.50states.com/wp-content/uploads/2020/12/US-Blank-map.jpg" alt="usa"> -->
+        
+        <!-- <p id="result"></p> -->
+
+        <canvas id="us_map", width="800", height="600"></canvas>
+
     </div> 
 </body>
 <script src="script.js"></script>
