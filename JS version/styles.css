@@ -1,10 +1,6 @@
-input[type="text"] {
-    padding: 10px;
-    border: 1px solid #a8a8a8;
-    border-radius: 15px;
-    font-size: 16px;
+html {
+    overflow-y: hidden;
 }
-
 
 body {
     background-color: rgb(255, 255, 240);
@@ -15,4 +11,28 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.guess {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #a8a8a8;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: lightgrey;
+    border-style: none;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+button[type="submit"]:active {
+    background-color: #a8a8a8;
 }
